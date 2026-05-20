@@ -109,7 +109,7 @@
 
             <div class="card product-card">
 
-                <img src="images/bag1.jpg" class="card-img-top" alt="Bag">
+                <img src="images/bag2.jpg" class="card-img-top" alt="Bag">
 
                 <div class="card-body text-center">
 
@@ -265,7 +265,28 @@
 
 </div>
 
+ <script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
  
+
+function addToCart(name, price) {
+
+    cart.push({ name, price });
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert(name + " added to cart!");
+
+}
+   funtion updateTotal() {
+     let total = cart.reduce((sum,item)=> sum +item.price, 0);
+     localStorage.setItem("total", total);
+     console.log("Total: P" + total);
+   }
+
+</script>
 
 </body>
 
