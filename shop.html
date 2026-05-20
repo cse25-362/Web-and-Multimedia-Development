@@ -283,9 +283,8 @@ function addToCart(name, price) {
    funtion updateTotal() {
      let total = cart.reduce((sum,item)=> sum +item.price, 0);
      localStorage.setItem("total", total);
-     console.log("Total: P" + total);
-   }
-
+ }
+updateTotal();
 </script>
 
 </body>
