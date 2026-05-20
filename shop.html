@@ -265,7 +265,7 @@
 
 </div>
 
- <script>
+<script>
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -273,20 +273,30 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function addToCart(name, price) {
 
-    cart.push({ name, price });
+    cart.push({ name: name, price: Number(price) });
 
     localStorage.setItem("cart", JSON.stringify(cart));
+
+    updateTotal();
+
+ 
 
     alert(name + " added to cart!");
 
 }
-   funtion updateTotal() {
-     let total = cart.reduce((sum,item)=> sum +item.price, 0);
-     localStorage.setItem("total", total);
- }
-updateTotal();
-</script>
 
+ function updateTotal() {
+
+    let total = cart.reduce((sum, item) => sum + item.price, 0);
+
+    localStorage.setItem("total", total);
+
+}
+
+ updateTotal();
+
+</script>
+   
 </body>
 
 </html>
